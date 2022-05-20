@@ -1,6 +1,6 @@
 ﻿using System.Runtime.InteropServices;
 
-namespace Logging.complex;
+namespace Logging;
 
 public class ComplexLoggingHooks
 {

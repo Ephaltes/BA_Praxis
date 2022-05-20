@@ -1,4 +1,4 @@
-﻿namespace Logging.complex;
+﻿namespace Logging;
 
 public static class VKeysExtension
 {
