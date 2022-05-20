@@ -67,7 +67,7 @@ public static class VKeysExtension
             VKeys.OemComma => ",",
             VKeys.OemPeriod => ".",
 
-            VKeys.Return => " <Return> ",
+            VKeys.Return => " <Return>\n",
             VKeys.Back => " <Backspace> ",
             VKeys.Tab => " <Tab> ",
             VKeys.Escape => " <Esc> ",

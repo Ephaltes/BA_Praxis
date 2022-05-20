@@ -7,7 +7,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <ScrollViewer>
         <TextBlock x:Name="tb_text" HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Height="414" Width="755" IsEnabled="False" Text="text "/>
-
+        </ScrollViewer>
     </Grid>
 </Window>
